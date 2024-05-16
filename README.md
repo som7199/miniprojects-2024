@@ -19,3 +19,43 @@ IoT 개발자 미니 프로젝트 리포지토리
     - 기능 명세 문서
     - DB 설계 ERD 또는 SSMS 물리적 DB설계
     - UI/UX 16일 내용 전달
+
+## 2일차
+- 미니 프로젝트
+    - 프로젝트 문서
+    - Notion 팀 프로젝트 템플릿 활용
+    - 컴퓨터 원격데스크탑 앱
+        - 애니데스크, https://anydesk.com/ko/
+        - 크롭 리모트데스트탑, https://remotedesktop.google.com/
+        - VNC, https://www.realvnc.com/en/connect/download/viewer/
+    - UI/UX 디자인 툴 설명
+        - https://ovenapp.io/ 카카오
+        - https://www.figma.com/ 피그마
+            - 피그마 단축키
+                - V - 선택도구
+                - A - 직선도구
+                - T - 텍스트도구
+                - Space + Drag - 마우스 커서에 따라 원하는 영역으로 이동
+                - Ctrl + R - 레이어 이름 변경
+                - Ctrl + G - 객체 그룹화
+                - Ctrl + Shift + G - 객체 그룹 해제
+                - Ctrl + D - 선택한 객체 복사
+                - Ctrl + [ - 선택한 객체 뒤로 보내기
+                - Ctrl + ] - 선택한 객체 앞으로 보내기
+        - https://apps.moqups.com/ 목업디자인 사이트
+    - 프리젠테이션
+        - https://www.miricanvas.com/ko 미리캔버스 활용 추천
+    - 라즈베리파이 리셋팅, 네트워크 설정, VNC(OS UI작업)
+
+- 스마트홈 연동 클래스 미니 프로젝트
+    1. 요구사항 정의, 기능 명세, 일정 정리
+    2. UI/UX 디자인
+        - RPi는 디자인 없음(콘솔)
+        - 데이터 수신앱
+        - 모니터링 앱
+    3. DB설계
+    4. 라즈베리파이(RPi) 셋팅(Network)
+    5. RPi GPIO에 IoT 디바이스 연결(카메라, HDT 센서, RGB, LED, ...)
+    6. RPi 데이터 전송 파이썬 프로그래밍
+    7. PC(Server) 데이터 수신 C# 프로그래밍
+    8. 모니터링 앱 개발(수신 및 송신)
