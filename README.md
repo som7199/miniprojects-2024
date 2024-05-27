@@ -121,9 +121,27 @@ IoT 개발자 미니 프로젝트 리포지토리
     - **MQTT** - 가장 편리! AWS IoT, Azure IoT 클라우드 산업계 표준으로 사용
 
  - MQTT 통신
-    - [ ] Mosquitto Broker 설치
+    - [x] Mosquitto Broker 설치
         - mosquitto.conf : listener 1883 0.0.0.0, allow_anonymous true
         - 방화벽 인바운드 열기
+    - [x] RPi : paho-mqtt 패키지 설치, 송신(publisher)
+    - Win/C# : MQTT.NET Nuget 패키지 설치, 수신(subscriber)
+        - M2Mqtt : 가볍게 쓸 수 있음, 업데이트가 안 됨
+        - MQTTNet : MS에서 개발, 무거움, 최신까지 업데이트 잘 됨
 
-    - [ ] RPi : paho-mqtt 패키지 설치, 송신(publisher)
-    - Win : MQTT.NET Nuget 패키지
+## 9일차
+- 스마트홈 연동 클래스 미니 프로젝트
+    - [x] WPF MQTT데이터 DB로 저장
+    - [x] MQTT데이터 실시간 모니터링 - 온도
+    - [ ] MQTT로 RPi 제어(LED 제어)
+    - [ ] WPF MQTT데이터 히스토리 확인
+
+## 10일차
+- 스마트홈 연동 클래스 미니 프로젝트 마무리
+    - [x] WPF MQTT데이터 DB로 저장
+    - [x] MQTT데이터 실시간 모니터링 - 습도
+    - [ ] MQTT로 RPi 제어(LED 제어)
+    - [ ] WPF MQTT데이터 히스토리 확인
+
+- 조별 미니 프로젝트 발표
+    - 1~5조까지
