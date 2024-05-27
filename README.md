@@ -76,7 +76,7 @@ IoT 개발자 미니 프로젝트 리포지토리
         - [x] Pi Apps 앱설치 도우미 앱
         - [x] Github Desktop, VS Code
         - [x] 네트워크 확인
-        -[ ] RealVNC Server 자동실행 설정 - 할 필요 없음
+        - [ ] RealVNC Server 자동실행 설정 - 할 필요 없음
 
 - 스마트홈 연동 클래스 미니 프로젝트
     - RPi 셋팅 ... 진행
@@ -92,7 +92,7 @@ IoT 개발자 미니 프로젝트 리포지토리
         - R - GPIO4 연결
         - B - GPIO5 연결
         - G - GPIO6 연결
-    - [-] 서브모터
+    - [ ] 서브모터
 
 ## 5일차
 - 라즈베라파이 IoT장비 설치
@@ -121,9 +121,9 @@ IoT 개발자 미니 프로젝트 리포지토리
     - **MQTT** - 가장 편리! AWS IoT, Azure IoT 클라우드 산업계 표준으로 사용
 
  - MQTT 통신
-    - [] Mosquitto Broker 설치
+    - [ ] Mosquitto Broker 설치
         - mosquitto.conf : listener 1883 0.0.0.0, allow_anonymous true
         - 방화벽 인바운드 열기
 
-    - [] RPi : paho-mqtt 패키지 설치, 송신(publisher)
+    - [ ] RPi : paho-mqtt 패키지 설치, 송신(publisher)
     - Win : MQTT.NET Nuget 패키지
