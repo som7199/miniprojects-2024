@@ -68,18 +68,15 @@ namespace SmartHomeMonitoringApp
             ActiveItem.Content = new Views.RealTimeControl();
             StsSelScreen.Content = "실시간 모니터링";
         }
-
-        private void MnuVisualizationMon_Click(object sender, RoutedEventArgs e)
+        private void MnuVisualization_Click(object sender, RoutedEventArgs e)
         {
+            ActiveItem.Content = new Views.VisualizationControl();
+            StsSelScreen.Content = "시각화 모니터링";
         }
 
         private void MnuAbout_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void MnuVisualization_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
