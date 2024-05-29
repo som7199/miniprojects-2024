@@ -150,6 +150,6 @@ IoT 개발자 미니 프로젝트 리포지토리
         ![스마트홈2](https://raw.githubusercontent.com/som7199/miniprojects-2024/main/images/mp003.png)
         
         ![스마트홈3](https://raw.githubusercontent.com/som7199/miniprojects-2024/main/images/mp004.png)
-
+        
 - 조별 미니 프로젝트 발표
     - 1~5조까지
