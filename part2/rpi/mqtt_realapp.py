@@ -9,9 +9,11 @@ import board
 import time
 import datetime as dt
 import json
+import io
 
 red_pin = 4
 green_pin= 6
+blue_pin = 5    # RGB
 dht_pin = 18
 
 dev_id = 'PKNU65'
@@ -20,15 +22,41 @@ loop_num = 0
 ## 초기화 시작
 def onConnect(client, userdata, flags, reason_code, properties):
     print(f'연결 성공 : {reason_code}')
-    client.subscribe('pknu/rcv')
+    client.subscribe('pknu/rcv/')
+    # # RGB LED off
+    GPIO.output(red_pin, GPIO.HIGH)
+    GPIO.output(green_pin, GPIO.HIGH)
+    GPIO.output(blue_pin, GPIO.HIGH)
+
+    # RGB LED on
+    # GPIO.output(red_pin, GPIO.LOW)
+    # GPIO.output(green_pin, GPIO.LOW)
+    # GPIO.output(blue_pin, GPIO.LOW)
 
 def onMessage(client, userdata, msg):
-    print(f'{msg.topic} + {msg.payload}')
+    # print(f'{msg.topic} + {msg.payload}')
+    # byte code -> string
+    # json ' -> "
+    value = json.loads(msg.payload.decode('utf-8').replace("'", '"'))
+    res = value['control']
+    if res == 'warning':
+        GPIO.output(blue_pin, GPIO.HIGH)    # off
+        GPIO.output(green_pin, GPIO.HIGH)   # off
+        GPIO.output(red_pin, GPIO.LOW)      # on
+    elif res == 'normal':
+        GPIO.output(blue_pin, GPIO.HIGH)    # off
+        GPIO.output(green_pin, GPIO.LOW)    # on
+        GPIO.output(red_pin, GPIO.HIGH)    # off
+    elif res == 'off':
+        GPIO.output(red_pin, GPIO.HIGH)
+        GPIO.output(green_pin, GPIO.HIGH)
+        GPIO.output(blue_pin, GPIO.HIGH)
 
 GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(red_pin, GPIO.OUT)       # LED 켜는 것
 GPIO.setup(green_pin, GPIO.OUT)
+GPIO.setup(blue_pin, GPIO.OUT)
 GPIO.setup(dht_pin, GPIO.IN)        # 온습도값을 RPi에서 받는 것
 dhtDevice = adafruit_dht.DHT11(board.D18)   # 중요!!
 
@@ -59,7 +87,7 @@ while True:
                         }   # dictionary area
         pub_data = json.dumps(origin_data, ensure_ascii=False)
 
-        mqttc.publish('pknu65/data', pub_data)
+        mqttc.publish('pknu/data/', pub_data)
         loop_num += 1
     except RuntimeError as ex:
         print(ex.args[0])
